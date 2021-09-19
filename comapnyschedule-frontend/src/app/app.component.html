@@ -1,0 +1,19 @@
+<div *ngIf="schedules.length > 0">
+    <ul>
+      <li *ngFor="let item of schedules">
+        <p>{{item.companyId}}</p>
+          <div class="element" *ngFor="let date of item.schedule">
+            <div class="element">
+              <i-bs *ngIf="isInPast(date)" name="alarm-fill"></i-bs>
+              <i-bs *ngIf="isFuture(date)" name="alarm"></i-bs>
+              <br/>
+              {{date}}
+            </div>
+            <div class="element">
+              {{calculateDistance(date, item)}}
+            </div>
+          </div>
+      </li>
+   </ul>
+</div>
+<p *ngIf="error" class="error">{{error | json}}</p>
