@@ -29,7 +29,7 @@ namespace Company.Schedule.Services
                 return new ScheduleResultDto
                 {
                     CompanyId = company.Id,
-                    //Schedule = company.Schedule.Select(s => s.Date.ToString("dd/MM/yyyy"))
+                    Schedule = company.Schedule.Select(s => s.Date.ToString("dd/MM/yyyy"))
                 };
             }
 
